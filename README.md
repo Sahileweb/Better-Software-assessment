@@ -8,7 +8,7 @@ A clean, minimalist product feedback board built for the Better Software Associa
 
 ## 💻 Tech Stack
 * **Frontend:** React.js, Vite, Tailwind CSS
-* **Backend:** Python, Flask, Flask-RESTful
+* **Backend:** Python, Flask, Flask-CORS
 * **Database:** SQLite (via SQLAlchemy ORM)
 * **Architecture:** Decoupled Client/Server REST API
 
@@ -17,9 +17,10 @@ A clean, minimalist product feedback board built for the Better Software Associa
 ## 🧠 Technical Decisions & Constraints
 
 When building from 0 → 1, speed and simplicity are paramount. 
+
 * **Zero-Config Database:** I opted for SQLite to ensure the reviewing engineering team can run this repository locally immediately, without needing to configure external PostgreSQL credentials or Docker containers.
 * **Separation of Concerns:** By completely decoupling the React Vite frontend from the Flask backend, this application is structured to easily scale into a microservices architecture in the future.
-* **AI-Augmented Engineering:** I utilized AI (Claude 3.5) as a pair programmer to rapidly bridge my existing REST API logic into Flask syntax. Please see the `/ai_docs` directory for my specific prompting constraints, architecture rules, and risk mitigation strategies.
+* **AI-Augmented Engineering:** I utilized AI (Claude / Gemini) as a pair programmer to rapidly bridge my existing REST API logic into Flask syntax. Please see the `ai_docs` directory for my specific prompting constraints, architecture rules, and risk mitigation strategies.
 
 ---
 
@@ -29,15 +30,30 @@ This project requires [Node.js](https://nodejs.org/) and [Python](https://www.py
 
 ### 1. Start the Flask Backend
 Open a terminal and navigate to the project root:
+
 ```bash
 cd backend
 
-# Create and activate the virtual environment
+# Create the virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Activate the virtual environment
+# On Mac/Linux: source venv/bin/activate
+# On Windows: venv\Scripts\activate
+venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Run the server (runs on http://localhost:5000)
 python app.py
+
+Leave the backend terminal running. Open a new terminal tab, and navigate to the project root:
+
+cd frontend
+
+# Install frontend dependencies
+npm install
+
+# Start the Vite development server
+npm run dev
