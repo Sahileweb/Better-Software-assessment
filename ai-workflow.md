@@ -1,7 +1,7 @@
 # AI Workflow & Guidance Constraints
 
 ## Overview
-For this assessment, I utilized Claude 3.5 / ChatGPT as an AI pair programmer. Because I was tasked with moving quickly, I used AI to bridge my existing architectural knowledge into the required tech stack.
+For this assessment, I utilized ChatGPT as an AI pair programmer. Because I was tasked with moving quickly, I used AI to bridge my existing architectural knowledge into the required tech stack.
 
 ## Constraints & System Rules
 Whenever I prompted the AI, I established the following strict rules:
